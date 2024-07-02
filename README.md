@@ -49,16 +49,15 @@ Create a virtual environment with all development dependencies:
     poetry shell
     poetry install
 
-
-Run the demo calculator tool:
-
-    python packages/valory/customs/calculator_request/calculator_request.py
-
-Run the prediction request tool:
+Run the data fetch request tool:
 
     export OPENAI_API_KEY=<your_openai_key>
-    python packages/valory/customs/prediction_request/prediction_request.py
+    python packages/subquery/customs/onchain-data-fetcher/onchain-data-fetcher.py
 
+Prompts:
+- `What is the overall amount transfered? Divide the amount by 10 powered in 18 to get the right precision.`
+- `Can you give me the customers (addresses) that address "0x0000000000000000000000000000000000000000" received the highest amount in total from in the last week (starting from timestamp 1719919701). Use the 1st provided example as a template (use `groupedAggregates` and timestamp as strings)",
+- `When was the first transfer executed, and what are its ID and amount (divide by 18 to get the correct amount)?`
 
 ## How to interact with already deployed mech tools
 
